@@ -1,0 +1,7 @@
+venv/
+john-jumbo/
+bcrypt_hashes.txt
+md5_hashes.txt
+sha256_hashes.txt
+alpha.chr
+filtered.txt
