@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}{% if title %}{{ title }} | {% endif %}Two-Factor Authentication | SecureRUS{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3>{% block page_title %}Two-Factor Authentication{% endblock %}</h3>
+                </div>
+                <div class="card-body qr-container">
+                    {% block form %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Force white background with high specificity -->
+<style>
+    .qr-container,
+    .qr-container *,
+    .qr-container .form-group,
+    .qr-container .form-control,
+    .qr-container div,
+    .qr-container p,
+    .qr-container img {
+        background-color: white !important;
+        color: black !important;
+    }
+    
+    .qr-container img {
+        padding: 20px !important;
+        border-radius: 5px !important;
+        display: block !important;
+        margin: 0 auto !important;
+        background: white !important;
+    }
+    
+    /* Override admin dark theme */
+    html[data-theme="dark"] .qr-container,
+    html[data-theme="dark"] .qr-container *,
+    html[data-theme="dark"] .qr-container img {
+        background-color: white !important;
+        color: black !important;
+    }
+</style>
+{% endblock %}

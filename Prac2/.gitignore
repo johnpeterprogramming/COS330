@@ -1,0 +1,42 @@
+# Byte-compiled / optimized / compiled files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+*.egg-info/
+
+# Virtual environment
+env/
+venv/
+.venv/
+*/.venv/
+
+# Database
+*.sqlite3
+/db.sqlite3
+
+# Media and static files (if served directly from project)
+/media/
+/static/
+
+# Local settings and sensitive data
+local_settings.py
+*.env
+.env
+.flaskenv
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test and coverage files
+.coverage
+.tox/
+
+# IDE specific files (example for VS Code)
+.vscode/

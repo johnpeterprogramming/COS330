@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Login</h2>
+<form method="post" action="{% url 'login' %}">
+	{% csrf_token %}
+	{{ form.non_field_errors }}
+	<div>
+		{{ form.username.label_tag }}
+		{{ form.username }}
+		{{ form.username.errors }}
+	</div>
+	<div>
+		{{ form.password.label_tag }}
+		{{ form.password }}
+		{{ form.password.errors }}
+	</div>
+	<button type="submit">Login</button>
+</form>
+{% endblock %}

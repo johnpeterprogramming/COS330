@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Confidential</h2>
+
+{% if messages %}
+{% for message in messages %}
+<div style="color: green;">{{ message }}</div>
+{% endfor %}
+{% endif %}
+
+
+{% if confidentials %}
+<ul>
+    {% for con in confidentials %}
+    <li>
+        {{ con.title }}
+        {% if perms.file_storage.change_encryptedconfidential or perms.file_storage.view_encryptedconfidential %}
+            - <a href="{% url 'update_confidential' con.id %}">View/Update</a>
+        {% endif%}
+        {% if perms.file_storage.delete_encryptedconfidential %}
+            - <a href="{% url 'delete_confidential' con.id %}">Delete</a>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No confidential files found.</p>
+{% endif %}
+
+<br>
+
+{% if perms.file_storage.add_encryptedconfidential %}
+<h3>Create new Confidential file</h3>
+<form method="post" action="{% url 'confidential' %}">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div>
+        {{ form.title.label_tag }}
+        {{ form.title }}
+        {{ form.title.errors }}
+    </div>
+    <div>
+        {{ form.text.label_tag }}
+        {{ form.text }}
+        {{ form.text.errors }}
+    </div>
+    <button type="submit">Upload</button>
+    {% if success %}<p style="color:green">{{ success }}</p>{% endif %}
+</form>
+{% endif%}
+
+{% endblock %}

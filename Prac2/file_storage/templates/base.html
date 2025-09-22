@@ -1,0 +1,97 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | SecureRUS{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">SecureRUS Management</a></h1>
+{% endblock %}
+
+{% block nav-breadcrumbs %}
+<!-- Empty block to remove the breadcrumb navigation -->
+{% endblock %}
+
+{% block nav-global %}
+<div style="float: right; margin-top: 10px;">
+    {% if user.is_authenticated %}
+        <span style="padding-right: 2rem;">Hello, {{ user.username }}!</span>
+        <a href="{% url 'two_factor:logout' %}" style="color: #fff; margin-right: 15px;">Logout</a>
+        <a href="{% url 'two_factor:setup' %}" style="color: #fff; margin-right: 15px;">2FA Setup</a>
+    {% else %}
+        <a href="{% url 'two_factor:login' %}" style="color: #fff; margin-right: 15px;">Login</a>
+    {% endif %}
+    <a href="{% url 'dashboard' %}" style="color: #fff; margin-right: 15px;">Dashboard</a>
+
+    <a href="{% url 'images' %}" style="color: #fff; margin-right: 15px;">Images</a>
+    {% if perms.file_storage.view_encrypteddocument %}
+    <a href="{% url 'documents' %}" style="color: #fff; margin-right: 15px;">Documents</a>
+    {% endif %}
+    {% if perms.file_storage.view_encryptedconfidential %}
+    <a href="{% url 'confidential' %}" style="color: #fff; margin-right: 15px;">Confidential</a>
+    {% endif %}
+    {% if perms.admin.auth_user_change%}
+    <a href="{% url 'admin:auth_user_changelist' %}" style="color: #fff; margin-right: 15px;">Manage</a>
+    {% endif %}
+
+</div>
+{% endblock %}
+
+{% block extrahead %}
+{{ block.super }}
+<style>
+    /* Force light theme by overriding dark mode styles */
+    html[data-theme="dark"],
+    html[data-theme="auto"] {
+        --primary: #79aec8;
+        --secondary: #417690;
+        --accent: #f5dd5d;
+        --primary-fg: #fff;
+        --body-fg: #333;
+        --body-bg: #fff;
+        --body-quiet-color: #666;
+        --body-loud-color: #000;
+        --header-color: #ffc;
+        --header-branding-color: #f7f7f7;
+        --header-bg: #417690;
+        --header-link-color: #fff;
+        --breadcrumbs-fg: #c4dce8;
+        --breadcrumbs-link-fg: #fff;
+        --breadcrumbs-bg: var(--primary);
+        --link-fg: #417690;
+        --link-hover-color: #036;
+        --link-selected-fg: #5b80b2;
+        --hairline-color: #e8e8e8;
+        --border-color: #ccc;
+        --error-fg: #ba2121;
+        --message-success-bg: #dfd;
+        --message-warning-bg: #ffc;
+        --message-error-bg: #ffefef;
+        --darkened-bg: #f8f8f8;
+        --selected-bg: #e4e4e4;
+        --selected-row: #ffc;
+        --button-fg: #fff;
+        --button-bg: #79aec8;
+        --button-hover-bg: #609ab6;
+        --default-button-bg: var(--primary);
+        --default-button-hover-bg: var(--secondary);
+        --close-button-bg: #888;
+        --close-button-hover-bg: #747474;
+        --delete-button-bg: #ba2121;
+        --delete-button-hover-bg: #a41515;
+        --object-tools-fg: var(--button-fg);
+        --object-tools-bg: var(--close-button-bg);
+        --object-tools-hover-bg: var(--close-button-hover-bg);
+    }
+    
+    /* Force light backgrounds */
+    body, html {
+        background-color: #fff !important;
+        color: #333 !important;
+    }
+    
+    /* Force form and content areas to be light */
+    .form-row, .submit-row, .card-body, .content {
+        background-color: #fff !important;
+        color: #333 !important;
+    }
+</style>
+{% endblock %}
