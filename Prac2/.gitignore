@@ -40,3 +40,5 @@ Thumbs.db
 
 # IDE specific files (example for VS Code)
 .vscode/
+
+*.zip

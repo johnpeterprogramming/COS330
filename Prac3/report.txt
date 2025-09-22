@@ -1,0 +1,13 @@
+John-Peter Krause u23533529
+COS 330 - Prac 3
+
+
+Task 1
+For my benign apps I used the following well-known benign apps: vlc, putty, notepad++, firefox and 
+Attach pictures of verifying benign exe's
+
+For malware I used malwareBazaar, it ended up being a lot easier to use that virusshare.com and theZoo, because I could filter by exe and didn't have to get special access or use an api to grab files.
+Attach pictures of verifying the malware exe's
+
+
+Task 2
