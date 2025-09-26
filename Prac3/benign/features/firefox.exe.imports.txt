@@ -1,0 +1,7 @@
+KERNEL32.DLL
+   b'LoadLibraryA'
+   b'ExitProcess'
+   b'GetProcAddress'
+   b'VirtualProtect'
+MSVCRT.dll
+   b'free'

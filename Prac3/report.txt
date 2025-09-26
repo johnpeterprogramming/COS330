@@ -11,3 +11,20 @@ Attach pictures of verifying the malware exe's
 
 
 Task 2
+I moved the malware files into my virtual machine in order to prevent accidental damage to my machine, but I also removed execute permissions as an extra precaution. Other precautions I added was not including any executables into version control and using a chroot so that my vm was isolated further.
+
+I created a bash script that retrieves data from the executables. The script also made use of upx and a python dependency pefile.
+I successfully ran the script that extracts file types, import tables, reading metadata like timestamps, compiler information and urls and strings.
+
+Malware analysis
+I opted to use Rizin for binary analysis, becasuse I have a Linux machine. Some samples could not be parsed by Rizin due to malformed PE headers, which itself is indicative of packing or anti-analysis techniques used in malware.
+
+I used upx analysis to see if any of the executables were packed by upx, but none were.
+Binwalk also did not identify any embedded file signatures, which probably means they used non-standard packing or encryption methods to conceal the payload.
+The absence of these results don't mean my analysis failed, instead they are meaningful in themselves. Benign executables are typically uncompressed while malware often employes custom packing techniques undetectable by standard tools.
+
+Benign analysis
+Rizin also failed for all the benign exe's, so I cannot use that meaningfully when creating my YARA scripts to classify malware.
+Binwalk also didn't identify any embedded file signatures.
+None of the benign apps were packed by upx, which makes sense, but also I cannot use this meaningfully when creating my yara scripts.
+The benign apps all have trusted imbedded urls for example microsoft.com and digicert.com, which will make it easier to identify malware when compared to their urls - which are urls like chiark.greenend.org.uk.

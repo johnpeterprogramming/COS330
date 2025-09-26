@@ -1,0 +1,6 @@
+Processing /home/johna/Documents/UniDocs/ThirdYear/COS330/Prac3/benign/binaries/vlc-3.0.21-win64.exe
+/home/johna/Documents/UniDocs/ThirdYear/COS330/Prac3/benign/binaries/vlc-3.0.21-win64.exe: PE32 executable (GUI) Intel 80386 (stripped to external PDB), for MS Windows, Nullsoft Installer self-extracting archive, 7 sections
+Size: 44943296\nAccess: 2025-09-26 08:31:07.579700946 +0200\nModify: 2025-09-25 08:08:22.006310568 +0200\nChange: 2025-09-26 08:28:05.669992668 +0200
+80d994fb95087efce34aeb4a98c8f4d7d2a035a6  /home/johna/Documents/UniDocs/ThirdYear/COS330/Prac3/benign/binaries/vlc-3.0.21-win64.exe
+9742689a50e96ddc04d80ceff046b28da2beefd617be18166f8c5e715ec60c59  /home/johna/Documents/UniDocs/ThirdYear/COS330/Prac3/benign/binaries/vlc-3.0.21-win64.exe
+Compile timestamp: 1714392441

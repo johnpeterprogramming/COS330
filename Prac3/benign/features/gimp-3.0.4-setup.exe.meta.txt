@@ -1,0 +1,6 @@
+Processing /home/johna/Documents/UniDocs/ThirdYear/COS330/Prac3/benign/binaries/gimp-3.0.4-setup.exe
+/home/johna/Documents/UniDocs/ThirdYear/COS330/Prac3/benign/binaries/gimp-3.0.4-setup.exe: PE32 executable (GUI) Intel 80386, for MS Windows, 11 sections
+Size: 300178176\nAccess: 2025-09-26 08:31:04.307759955 +0200\nModify: 2025-09-25 16:00:46.327671242 +0200\nChange: 2025-09-26 08:28:05.669992668 +0200
+2f7c0b96b67b09177fb0e8ebb2a9842a980b824a  /home/johna/Documents/UniDocs/ThirdYear/COS330/Prac3/benign/binaries/gimp-3.0.4-setup.exe
+385e36fe577cbdbfc71ba79d6c046d6f4eaabc01effd7f067bf15fd98410b2a1  /home/johna/Documents/UniDocs/ThirdYear/COS330/Prac3/benign/binaries/gimp-3.0.4-setup.exe
+Compile timestamp: 1741848945

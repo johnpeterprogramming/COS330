@@ -1,0 +1,10 @@
+http://schemas.microsoft.com/SMI/2005/WindowsSettings
+http://notepad-plus-plus.org/nppRevoke.crl0D
+http://notepad-plus-plus.org/nppRoot.crt0
+https://notepad-plus-plus.org/0O
+http://www.microsoft.com/pkiops/Docs/Repository.htm0
+http://www.microsoft.com/pkiops/crl/Microsoft%20Identity%20Verification%20Root%20Certificate%20Authority%202020.crl0
+http://www.microsoft.com/pkiops/certs/Microsoft%20Identity%20Verification%20Root%20Certificate%20Authority%202020.crt0
+http://www.microsoft.com/pkiops/crl/Microsoft%20Public%20RSA%20Timestamping%20CA%202020.crl0y
+http://www.microsoft.com/pkiops/certs/Microsoft%20Public%20RSA%20Timestamping%20CA%202020.crt0
+http://www.microsoft.com/pkiops/Docs/Repository.htm0

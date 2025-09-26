@@ -1,0 +1,6 @@
+Processing /home/johna/Documents/UniDocs/ThirdYear/COS330/Prac3/benign/binaries/firefox.exe
+/home/johna/Documents/UniDocs/ThirdYear/COS330/Prac3/benign/binaries/firefox.exe: PE32 executable (GUI) Intel 80386, for MS Windows, UPX compressed, 3 sections
+Size: 84220464\nAccess: 2025-09-26 08:34:47.814741938 +0200\nModify: 2025-09-25 08:08:21.929314387 +0200\nChange: 2025-09-26 08:34:35.358965256 +0200
+b52a340eb2026732e7b67f1a179f6bdbfbbee1e3  /home/johna/Documents/UniDocs/ThirdYear/COS330/Prac3/benign/binaries/firefox.exe
+25c03c8b477e91d0d47d19a47278e7ae20917fa9c5d5d0380857e8b4bf77f536  /home/johna/Documents/UniDocs/ThirdYear/COS330/Prac3/benign/binaries/firefox.exe
+Compile timestamp: 1535667513

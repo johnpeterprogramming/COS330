@@ -1,0 +1,6 @@
+Processing /home/johna/Documents/UniDocs/ThirdYear/COS330/Prac3/benign/binaries/npp.8.8.5.Installer.x64.exe
+/home/johna/Documents/UniDocs/ThirdYear/COS330/Prac3/benign/binaries/npp.8.8.5.Installer.x64.exe: PE32 executable (GUI) Intel 80386, for MS Windows, Nullsoft Installer self-extracting archive, 5 sections
+Size: 6879312\nAccess: 2025-09-26 08:31:03.966766105 +0200\nModify: 2025-09-25 08:08:21.941313792 +0200\nChange: 2025-09-26 08:28:05.669992668 +0200
+7568161b568d9915f084f9eff1e9486b362b2596  /home/johna/Documents/UniDocs/ThirdYear/COS330/Prac3/benign/binaries/npp.8.8.5.Installer.x64.exe
+c6d1e5aacbf69aa18df4caf1346fd69638491a5ad0085729bae91c662d1c62bb  /home/johna/Documents/UniDocs/ThirdYear/COS330/Prac3/benign/binaries/npp.8.8.5.Installer.x64.exe
+Compile timestamp: 1741475120
