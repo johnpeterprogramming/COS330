@@ -50,3 +50,29 @@ Malicious files show an extreme spike in one unnamed function 36+ occurences, wh
 
 Urls patterns:
 Malware contains fewer unique urls whereas benign show a more diverse set of urls, however in my samples I didn't get a large enough diference in my opinion to apply a hard rule for my yara files.
+
+
+Task 3:
+
+I created 3 yara rules for the following:
+- Rule 1: Should trigger on malware samples with high import counts, minimal false positives on legitimate software
+- Rule 2: Should have high detection rate on downloaders/droppers, very low false positive rate  
+- Rule 3: Should catch packed/obfuscated samples
+
+1. HighImportCountMalware:
+- Based on analysis showing malicious files can have 250-300+ imports
+- Targets the specific DLL combination pattern (USER32 + ADVAPI32 + WININET)
+- Requires both network and system manipulation capabilities
+- Low false positive risk as benign software rarely combines high imports with these specific capabilities
+
+2. NetworkDownloaderMalware: 
+- Targets the stark difference in "curl" usage (70+ in malware vs ~2 in benign)
+- Focuses on download + encoding combinations (common in malware payloads)
+- Onion references are strong indicators with minimal false positive risk
+- Uses threshold-based detection for high-frequency terms
+
+3. LowStringCountObfuscatedMalware:
+- Addresses the corrected finding that malware has fewer strings (10K-80K vs millions)
+- Detects files with functionality but suspiciously few readable strings
+- Targets obfuscated/packed malware that tries to hide its true nature
+- Uses dynamic loading functions as indicators of evasive techniques
