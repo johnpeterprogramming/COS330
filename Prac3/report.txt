@@ -28,3 +28,25 @@ Rizin also failed for all the benign exe's, so I cannot use that meaningfully wh
 Binwalk also didn't identify any embedded file signatures.
 None of the benign apps were packed by upx, which makes sense, but also I cannot use this meaningfully when creating my yara scripts.
 The benign apps all have trusted imbedded urls for example microsoft.com and digicert.com, which will make it easier to identify malware when compared to their urls - which are urls like chiark.greenend.org.uk.
+
+
+Comparison of graphs
+I used a python script to retrieve data from bash script output, organize into csv and plot them using matplotlib.
+Import function count:
+benign exe's typically import 10-160 functions, with most clustering around 150-160 and around 10. Malicious exe's show a much wider distribution importing 0-300+ functions. I will create yara rules that flag exe's with unusually high import counts >200 or suspiciously low < 5 imports.
+
+Strings:
+The benign apps have significantly higher strings ranging from 0-4 millions whereas the malicious have around 10-80k strings. Thus files with unusually low strings counts in the 10k-80k range will be flagged.
+
+Suspicious Keywords:
+Malicious files have high amounts of curl, download and moderate amount of base64, onion(very suspicious) and wget. Benign apps habe minimum presence of these keywords. I will high occurences of curl, any occurence of onion and download + base64 and wget to flag malware in my yara files.
+
+Dll imports:
+Malware has a heavy reliance on USER32.dll, ADVAPI32.dll, OLE32.dll and KERNEL32.dll and moderate use of WININET.dll, SHELL32.dll, OLEAUT32.dll, WS2_32.dll. Benign apps have way more diverse dll usage with lower individual concentrations. In my yara I will flag certain dll combinations.
+
+
+Import function analysis:
+Malicious files show an extreme spike in one unnamed function 36+ occurences, while benign files show a more balanced function usage. For yara I will look at unusual concentrations of specific imported functions.
+
+Urls patterns:
+Malware contains fewer unique urls whereas benign show a more diverse set of urls, however in my samples I didn't get a large enough diference in my opinion to apply a hard rule for my yara files.
